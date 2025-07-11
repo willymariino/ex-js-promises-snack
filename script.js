@@ -18,3 +18,17 @@ function getPostTitle(id) {
 getPostTitle(2)
     .then(res => console.log(res))
     .catch(error => console.error(error))
+
+getPostTitle(3)
+    .then(res => console.log(res))
+    .catch(error => console.error(error))
+
+/*
+🏆 Snack 2
+Crea la funzione lanciaDado() che restituisce una Promise che, 
+dopo 3 secondi, genera un numero casuale tra 1 e 6. Tuttavia, nel 20 % dei casi, il dado si "incastra" e la Promise va in reject.
+*/
+
+function lanciaDado() {
+    console.log("sto lanciando il dado 🎲")
+}
