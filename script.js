@@ -36,7 +36,7 @@ function lanciaDado() {
             const valore = Math.round(Math.random() * 6)
             const jammedDice = Math.random()
             if (jammedDice > 0.2) {
-                resolve("dado lanciato", console.log(valore))
+                resolve(valore)
             }
             else {
                 reject("oh no! il dado si è incastrato 😩")
@@ -47,6 +47,6 @@ function lanciaDado() {
 }
 
 lanciaDado()
-    .then(messaggio => console.log(messaggio))
+    .then(valore => console.log(`Dado lanciato: ${valore}`))
     .catch(errore => console.error(errore))
     .finally(() => console.log("operazione coompletata"))
