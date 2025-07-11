@@ -30,5 +30,23 @@ dopo 3 secondi, genera un numero casuale tra 1 e 6. Tuttavia, nel 20 % dei casi,
 */
 
 function lanciaDado() {
-    console.log("sto lanciando il dado 🎲")
+    return new Promise((resolve, reject) => {
+        console.log("sto lanciando il dado 🎲")
+        setTimeout(() => {
+            const valore = Math.round(Math.random() * 6)
+            const jammedDice = Math.random()
+            if (jammedDice > 0.2) {
+                resolve("dado lanciato", console.log(valore))
+            }
+            else {
+                reject("oh no! il dado si è incastrato 😩")
+            }
+
+        }, 3000)
+    })
 }
+
+lanciaDado()
+    .then(messaggio => console.log(messaggio))
+    .catch(errore => console.error(errore))
+    .finally(() => console.log("operazione coompletata"))
