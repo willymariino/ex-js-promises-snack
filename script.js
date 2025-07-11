@@ -9,7 +9,7 @@ Crea una funzione getPostTitle(id) che accetta un id e restituisce una Promise
 function getPostTitle(id) {
     return new Promise((resolve, reject) => {
         axios.get(`https://dummyjson.com/posts/${id}`)
-            .then(res => resolve(res.data))
+            .then(res => resolve(res.data.title))
             .catch(reject)
             .finally(() => console.log("Richiesta completata"));
     })
